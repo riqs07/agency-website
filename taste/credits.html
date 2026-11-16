@@ -27,15 +27,22 @@
 <style>
 :root {
   --p-bg: #f7f7f5; --p-surface: #ebebe8; --p-ink: #000000; --p-muted: #666662;
-  --p-accent: #d0106f; --p-accent-ink: #ffffff; --p-action: #d0106f; --p-action-ink: #ffffff;
+  --p-accent: #14284b; --p-accent-ink: #ffffff; --p-action: #14284b; --p-action-ink: #ffffff;
   --p-inv-bg: #000000; --p-inv-surface: #010101; --p-inv-ink: #f7f7f5; --p-inv-muted: #828280;
-  --p-inv-accent: #d0106f; --p-inv-accent-ink: #ffffff; --p-inv-action: #d0106f; --p-inv-action-ink: #ffffff;
+  --p-inv-accent: #8aa4d6; --p-inv-accent-ink: #000000; --p-inv-action: #8aa4d6; --p-inv-action-ink: #000000;
   --font-display: "Hanken Grotesk", system-ui, sans-serif;
   --font-text: "Hanken Grotesk", system-ui, sans-serif;
   --display-weight: 400;
   --display-tracking: -0.03em;
   --display-tracking-xl: -0.038em;
 }
+</style>
+<!-- page CSS: the tool row in #pricing (a visual of real icons) -->
+<style>
+  .tool-row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-4); }
+  .tool-row li { display: grid; justify-items: start; gap: var(--s-2); }
+  #resources .panel { --p-h: 240px; }
+  @media (max-width: 639px) { #resources .panel { --p-h: 112px; } #resources .card p { display: none; } #pricing .wrap > .grid { display: contents; } .tool-row { gap: var(--s-2); } .tool-row .ic-tile { --tile: 48px; } .tool-row .t-small { font-size: 13px; line-height: 1.3; } }
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script src="assets/backgrounds/backgrounds.js"></script>
@@ -61,18 +68,18 @@
           <div class="wrap grid">
             <div class="menu-col span-3">
               <p class="t-label">Listings and posts</p>
-              <a href="#setups">Listing Launch Kit<span>Copy and posts per listing</span></a>
-              <a href="#setups">Weekly Content Engine<span>A week of posts on Monday</span></a>
-              <a href="#setups">Sphere report<span>Who to call this week</span></a>
+              <a href="#kit">Listing Launch Kit<span>Copy and posts per listing</span></a>
+              <a href="#content">Weekly Content Engine<span>A week of posts on Monday</span></a>
+              <a href="#sphere">Sphere report<span>Who to call this week</span></a>
             </div>
             <div class="menu-col span-3">
               <p class="t-label">Your inbox and deals</p>
-              <a href="#setups">Daily Agent Brief<span>Your day before 7am</span></a>
-              <a href="#setups">Client updates<span>Friday drafts for each deal</span></a>
-              <a href="#setups">Deadline Tracker<span>Contract dates on your calendar</span></a>
+              <a href="#brief">Daily Agent Brief<span>Your day before 7am</span></a>
+              <a href="#updates">Client updates<span>Friday drafts for each deal</span></a>
+              <a href="#deadlines">Deadline Tracker<span>Contract dates on your calendar</span></a>
             </div>
             <a class="menu-card span-3 start-10" href="#book">
-              <div class="panel"><img class="frame__img" src="assets/img/photo-f149547742-500.webp" alt="A white brick house with a tiled roof behind a low front wall" width="500" height="333"></div>
+              <div class="panel"><img class="frame__img" src="assets/img/photo-f152491434-500.webp" alt="Two wicker rocking chairs on a wooden porch" width="500" height="375"></div>
               <span class="t-card">Free audit</span>
               <span class="t-small muted">30 minutes, in person or Zoom</span>
             </a>
@@ -81,6 +88,7 @@
       </div>
       <div class="nav__item"><a class="nav__link" href="#process">Process</a></div>
       <div class="nav__item"><a class="nav__link" href="#pricing">Pricing</a></div>
+      <div class="nav__item"><a class="nav__link" href="#resources">Resources</a></div>
       <div class="nav__item"><a class="nav__link" href="#about">About</a></div>
     </nav>
     <div class="nav__actions">
@@ -104,6 +112,9 @@
       <li><a href="https://commons.wikimedia.org/wiki/File:American_craftsman_bungalow_in_San_Jose,_Ca.jpg">David Sawyer</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></li>
       <li><a href="https://commons.wikimedia.org/wiki/File:Front_door,_South_Side,_2022-10-08,_01.jpg">Cbaile19</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
       <li><a href="https://commons.wikimedia.org/wiki/File:Uptown_New_Orleans_House_Interior_1986_-_Kitchen_Window.jpg">Infrogmation of New Orleans</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Close-up_of_stacked_books._(51539890528).jpg">Nenad Stojkovic</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Scattered_white_paper_(Unsplash).jpg">Brandi Redd</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Agenda_et_crayon.jpg">Philippe Alès</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
     </ul>
   </section>
 </main>
@@ -123,19 +134,24 @@
           <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Steele Software</a>
           <p class="footer__lede">AI setup for Triangle real estate agents</p>
         </div>
-        <div class="span-2 footer__col"><h3>Setups</h3><ul><li><a href="#setups">All six</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Process</h3><ul><li><a href="#process">Three steps</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Pricing</h3><ul><li><a href="#pricing">Prices</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>About</h3><ul><li><a href="#about">About T</a></li><li><a href="#book">Contact</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Setups</h3><ul><li><a href="#setups">All six</a></li><li><a href="#process">Process</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Pricing</h3><ul><li><a href="#pricing">Prices</a></li><li><a href="#questions">Questions</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Resources</h3><ul><li><a href="blog/listing-descriptions-with-chatgpt.html">Listing copy</a></li><li><a href="blog/fair-housing-checklist-ai-listings.html">Fair housing</a></li><li><a href="blog/morning-brief-claude-gmail-calendar.html">Morning brief</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>About</h3><ul><li><a href="#about">About T</a></li></ul></div>
       </div>
       <div class="footer__legal">
         <span>&copy; 2026 Steele Software, Raleigh</span>
         <div class="socials"></div>
+        <span class="t-small">Product names and logos are trademarks of their owners</span>
         <a class="credits" href="credits.html">Photographs via Wikimedia Commons</a>
       </div>
     </div>
   </div>
 </footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a class="btn btn--primary" href="#book">Book a free audit</a>
+</nav>
 
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>

@@ -235,6 +235,81 @@
    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Craftsman_Bungalow_-_Northfield,_MN_-_Union_Street_(320)_(1).jpg",
    "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c877.webp",
+   "files": [
+    "photo-c877-500.webp",
+    "photo-c877-960.webp",
+    "photo-c877.webp"
+   ],
+   "id": "c877",
+   "alt": "Close-up of soft-focus stacked books showing page edges and covers with no readable spines",
+   "by": "Nenad Stojkovic",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Close-up_of_stacked_books._(51539890528).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c823.webp",
+   "files": [
+    "photo-c823-500.webp",
+    "photo-c823-960.webp",
+    "photo-c823.webp"
+   ],
+   "id": "c823",
+   "alt": "Overlapping sheets of pale grey-green card scattered at angles, seen from above, with soft shadows along their edges",
+   "by": "Brandi Redd",
+   "licence": "CC0",
+   "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Scattered_white_paper_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f113409651.webp",
+   "files": [
+    "photo-f113409651-500.webp",
+    "photo-f113409651-960.webp",
+    "photo-f113409651.webp"
+   ],
+   "id": "f113409651",
+   "alt": "Laptop keyboard abstraction",
+   "by": "Martin Vorel",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Laptop_keyboard_abstraction.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f84603380.webp",
+   "files": [
+    "photo-f84603380-500.webp",
+    "photo-f84603380-960.webp",
+    "photo-f84603380.webp"
+   ],
+   "id": "f84603380",
+   "alt": "Agenda et crayon",
+   "by": "Philippe Alès",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Agenda_et_crayon.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f30343877.webp",
+   "files": [
+    "photo-f30343877-500.webp",
+    "photo-f30343877-960.webp",
+    "photo-f30343877.webp"
+   ],
+   "id": "f30343877",
+   "alt": "Backlit keyboard",
+   "by": "Colin",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Backlit_keyboard.jpg",
+   "source": "Wikimedia Commons"
   }
  ]
 }
