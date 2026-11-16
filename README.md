@@ -7,6 +7,8 @@ step and no dependencies.
 - `css/site.css` holds the styles, using the tokens from `DESIGN.md`.
 - `js/site.js` runs the hero demo, the time-back calculator, the mobile menu and the form.
 - `DESIGN.md` is the design system: colors, type, spacing and components, with the reasons behind them.
+- `taste/` is a separate direction built with the taste skill (service page: off-white and pink,
+  Hanken Grotesk, stand-in photos from Wikimedia Commons, credits in `taste/credits.html`).
 - `wireframes/` keeps the first structure wireframes (home, three industry pages,
   case study, offer page) for reference.
 
