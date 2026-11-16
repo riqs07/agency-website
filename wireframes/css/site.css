@@ -1,0 +1,76 @@
+/* Shared styles for the Steele Software site.
+   Wireframe-level styling: colors, spacing and type come straight from the
+   design canvas. Restyle here; most layout is still inline in each page. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #FFFFFF; }
+img { max-width: 100%; display: block; }
+
+a { color: #1D4ED8; }
+a:hover { color: #1E3A8A; }
+:focus-visible { outline: 2px solid #1D4ED8; outline-offset: 2px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px; border-radius: 8px;
+  background: #18181B; color: #FFFFFF; text-decoration: none;
+  font-weight: 600; font-size: 15px;
+}
+.btn:hover { background: #3F3F46; color: #FFFFFF; }
+
+.btn2 {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px; border-radius: 8px;
+  border: 1px solid #A1A1AA; color: #18181B; text-decoration: none;
+  font-weight: 600; font-size: 15px;
+}
+.btn2:hover { background: #F4F4F5; color: #18181B; }
+
+/* Placeholder box for photos, videos and anything not built yet */
+.ph {
+  border: 1.5px dashed #A1A1AA; border-radius: 12px; background: #F4F4F5;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: #52525B; font-size: 14px; padding: 16px;
+}
+
+.card { border: 1px solid #D4D4D8; border-radius: 12px; padding: 24px; background: #FFFFFF; }
+
+.tag {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: #52525B;
+}
+
+/* "Sample" badge on placeholder testimonials and case studies */
+.sample {
+  display: inline-block; align-self: flex-start;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: #78350F; background: #FEF3C7; border-radius: 4px; padding: 2px 6px;
+}
+
+.sec { padding: 72px 0; border-top: 1px solid #E4E4E7; }
+h2 { font-size: 30px; line-height: 1.2; margin: 8px 0 12px; }
+
+ul.chk { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+ul.chk li { padding-left: 24px; position: relative; line-height: 1.45; }
+ul.chk li::before { content: "✓"; position: absolute; left: 0; color: #18181B; font-weight: 700; }
+
+/* Page variants carried over from the wireframes */
+.page-home .sec { padding: 80px 0; }
+.page-home h2 { font-size: 32px; }
+.page-case h2 { font-size: 26px; line-height: 1.25; margin: 0 0 12px; }
+.page-case p { line-height: 1.6; }
+
+/* Form confirmation (see js/site.js) */
+.form-done { margin: 0; padding: 12px 14px; border-radius: 8px; background: #DCFCE7; color: #14532D; font-weight: 600; }
+.form-error { margin: 0; color: #B91C1C; font-size: 14px; }
+
+/* Small screens: the wireframes set big headline sizes inline */
+@media (max-width: 640px) {
+  h1 { font-size: 34px !important; }
+  h2, .page-home h2 { font-size: 26px; }
+  .sec, .page-home .sec { padding: 56px 0; }
+  header nav { gap: 14px !important; }
+}

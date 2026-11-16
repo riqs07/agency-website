@@ -1,20 +1,14 @@
 # Steele Software website
 
-A static site built from the structure wireframes on the "Steele Software Site Wireframes"
-design canvas. It has no build step and no dependencies.
+AI setup and training for Triangle real estate agents. A static site with no build
+step and no dependencies.
 
-## Pages
-
-| File | Page |
-| --- | --- |
-| `index.html` | Home |
-| `real-estate.html` | Industry: real estate teams |
-| `property-management.html` | Industry: property management |
-| `bookkeeping.html` | Industry: bookkeeping and accounting |
-| `case-study.html` | Case study (sample) |
-| `power-session.html` | Offer: AI Power Session |
-
-`css/site.css` holds the shared styles. `js/site.js` handles the forms.
+- `index.html` is the real estate landing page.
+- `css/site.css` holds the styles, using the tokens from `DESIGN.md`.
+- `js/site.js` runs the hero demo, the time-back calculator, the mobile menu and the form.
+- `DESIGN.md` is the design system: colors, type, spacing and components, with the reasons behind them.
+- `wireframes/` keeps the first structure wireframes (home, three industry pages,
+  case study, offer page) for reference.
 
 ## Run locally
 
@@ -22,15 +16,15 @@ design canvas. It has no build step and no dependencies.
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open http://localhost:8000. Any static server works, for example `npx serve .`.
 
 ## Before launch
 
-- **Forms** validate and show a confirmation but don't send anything yet. Set `FORM_ENDPOINT`
-  in `js/site.js` to a form service (Formspree, Basin, a Vercel function) to collect submissions.
-- **Placeholders** are still in place: dashed boxes for photos and videos, `[X]` and
-  `[Name]` text, and testimonials marked "Sample". Replace them with real content.
-- **Styling** is wireframe-level. Most layout is still inline styles carried over from the canvas.
+- **Copy and prices:** text is a working draft. Anything highlighted in yellow
+  (prices, phone, email, the portrait) is a placeholder.
+- **Form:** validates and shows a confirmation but doesn't send anything yet. Set
+  `FORM_ENDPOINT` in `js/site.js` to a form service (Formspree, Basin, a Vercel function).
+- **Photo:** replace the portrait placeholder in the About section.
 
 ## Deploy
 
