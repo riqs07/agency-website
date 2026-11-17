@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Squish | Steele Software</title>
+<meta name="description" content="A soft body playground. Grab the shapes, squeeze them, throw them around.">
+<meta name="theme-color" content="#E9E6EE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/playground.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./js/vendor/three/three.module.min.js"
+  }
+}
+</script>
+<script type="module" src="js/playground.js"></script>
+</head>
+<body>
+<canvas id="stage" aria-label="Soft shapes you can grab, squeeze and throw"></canvas>
+
+<header class="bar">
+  <a class="wordmark" href="./">Steele Software</a>
+  <div class="controls">
+    <label class="soft">
+      <span>Softness</span>
+      <input id="softness" type="range" min="0" max="100" value="55" aria-label="Softness">
+    </label>
+    <button id="redrop" type="button">Drop again</button>
+  </div>
+</header>
+
+<p class="hint" id="hint">Grab one. Squeeze it. Throw it.</p>
+
+<p class="fallback" id="fallback" hidden>This page needs WebGL, which your browser has turned off or doesn't support.</p>
+</body>
+</html>

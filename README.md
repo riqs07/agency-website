@@ -6,6 +6,9 @@ step and no dependencies.
 - `index.html` is the real estate landing page.
 - `css/site.css` holds the styles, using the tokens from `DESIGN.md`.
 - `js/site.js` runs the hero demo, the time-back calculator, the mobile menu and the form.
+- `playground.html` is a soft body toy: 3D shapes drop in and you can grab, squeeze and throw them.
+  Its code is `js/playground.js` and `css/playground.css`. It uses three.js, vendored in
+  `js/vendor/three/` so the site still has no build step or install.
 - `DESIGN.md` is the design system: colors, type, spacing and components, with the reasons behind them.
 - `taste/` is a separate direction built with the taste skill (service page: off-white and deep navy,
   Hanken Grotesk, stand-in photos from Wikimedia Commons, credits in `taste/credits.html`). Free guides live in `taste/blog/`.

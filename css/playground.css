@@ -1,0 +1,155 @@
+/* Soft body playground. The canvas is the page; everything else floats on top. */
+
+:root {
+  --bg: #E9E6EE;
+  --ink: #1B1A22;
+  --ink-2: #5A5766;
+  --chip: rgba(255, 255, 255, 0.62);
+  --chip-line: rgba(27, 26, 34, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+#stage.can-grab { cursor: grab; }
+#stage.grabbing { cursor: grabbing; }
+
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: calc(14px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 14px calc(16px + env(safe-area-inset-left));
+  pointer-events: none;
+}
+.bar > * { pointer-events: auto; }
+
+.wordmark {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.soft,
+#redrop {
+  height: 38px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.soft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+}
+.soft span { color: var(--ink-2); }
+.soft input {
+  width: 96px;
+  accent-color: var(--ink);
+  margin: 0;
+}
+
+#redrop {
+  padding: 0 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms, transform 150ms;
+}
+#redrop:hover { background: rgba(255, 255, 255, 0.85); }
+#redrop:active { transform: scale(0.96); }
+
+.wordmark:focus-visible,
+#redrop:focus-visible,
+.soft input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.hint {
+  position: fixed;
+  left: 50%;
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+.hint.gone { opacity: 0; }
+
+.fallback {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(32ch, 80vw);
+  height: fit-content;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+@media (max-width: 520px) {
+  .soft span { display: none; }
+  .soft { padding: 0 10px; }
+  .soft input { width: 56px; }
+  #redrop { padding: 0 12px; }
+  .wordmark { font-size: 14px; padding: 9px 12px; }
+}
