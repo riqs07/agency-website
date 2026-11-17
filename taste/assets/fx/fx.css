@@ -1,0 +1,42 @@
+/*
+  fx.css - the experimental scroll effects layer (fx.js is the moving half).
+  Four effects, each on its own switch on <html>:
+    data-fx="smooth curve reveal wind"   (leave one out to turn it off; data-fx="off" turns all off)
+  Nothing here hides content unless fx.js has put its class on <html> first, so the page reads
+  the same with scripts off, under prefers-reduced-motion and in print.
+*/
+:root {
+  --fx-line: #4a6cf7;                       /* the scroll-drawn curve */
+  --fx-line-w: clamp(10px, 2.1vw, 30px);
+  --fx-ease: cubic-bezier(.19, .84, .22, 1);
+}
+
+/* ---- smooth scrolling (Lenis) ---- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* ---- the scroll-drawn curve ---- */
+.fx-main { position: relative; isolation: isolate; }
+.fx-curve { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.fx-curve path { fill: none; stroke: var(--fx-line); stroke-width: var(--fx-line-w); stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---- headline reveal: each line rises from behind its own edge ---- */
+.fx-w { display: inline-block; overflow: clip; overflow-clip-margin: 0; vertical-align: top; padding-bottom: .14em; margin-bottom: -.14em; }
+.fx-w > span { display: inline-block; will-change: transform; }
+html.fx-reveal .fx-h:not(.is-in) .fx-w > span { transform: translateY(112%); }
+html.fx-reveal .fx-h.is-in .fx-w > span { transform: none; transition: transform 1s var(--fx-ease); transition-delay: calc(var(--fx-l, 0) * 110ms); }
+
+/* ---- wind: media arrives warped, as if blown, and settles flat ---- */
+.fx-wind { transform-origin: 0 0; will-change: transform; backface-visibility: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-curve { display: none; }
+  html.fx-reveal .fx-h .fx-w > span { transform: none !important; transition: none !important; }
+  .fx-wind { transform: none !important; }
+}
+@media print {
+  .fx-curve { display: none; }
+  html.fx-reveal .fx-h .fx-w > span { transform: none !important; }
+  .fx-wind { transform: none !important; }
+}

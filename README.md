@@ -9,6 +9,9 @@ step and no dependencies.
 - `DESIGN.md` is the design system: colors, type, spacing and components, with the reasons behind them.
 - `taste/` is a separate direction built with the taste skill (service page: off-white and deep navy,
   Hanken Grotesk, stand-in photos from Wikimedia Commons, credits in `taste/credits.html`). Free guides live in `taste/blog/`.
+- `taste/assets/fx/` adds experimental scroll effects to the taste page: smooth scrolling (Lenis, MIT, vendored),
+  a line drawn down the page as it scrolls, headline reveals and a wind warp on photographs. Each one switches off
+  with `data-fx` on `<html>`; see the top of `taste/assets/fx/fx.js`.
 - `wireframes/` keeps the first structure wireframes (home, three industry pages,
   case study, offer page) for reference.
 
